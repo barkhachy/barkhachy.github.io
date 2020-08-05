@@ -1,0 +1,14 @@
+Resources:
+  EventsTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: ${self:custom.eventsTableName}
+      ProvisionedThroughput:
+        ReadCapacityUnits: 1
+        WriteCapacityUnits: 1
+      AttributeDefinitions:
+        - AttributeName: mail_id
+          AttributeType: S
+      KeySchema:
+        - AttributeName: mail_id
+          KeyType: HASH
