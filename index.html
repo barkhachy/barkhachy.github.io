@@ -1,6 +1,26 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <style>
+        body {
+          height: 100%;
+        }
+        
+        #page-content {
+          flex: 1 0 auto;
+        }
+        
+        #sticky-footer {
+          flex-shrink: none;
+        }
+        
+        /* Other Classes for Page Styling */
+        
+        body {
+          background: palegoldenrod;
+          background: linear-gradient(to right, palegoldenrod,rgb(226, 221, 222));
+        } 
+      </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -12,8 +32,7 @@
     
     <title>Cart</title>
     <header>
-      <nav class="navbar navbar-light bg-light"><a class="navbar-brand" href="#"><img class="d-inline-block panel-default" src="brand.jpg" width="80" height="80" alt="Payment"/>
-  Payment</a></nav>
+      <nav class="navbar navbar-light bg-light"><a class="navbar-brand" href="#"><img class="d-inline-block panel-default" src="brand.jpg" width="80" height="80" alt="Payment"/>Online Payment Portal</a></nav>
   </header>
   </head>
   <body>
@@ -261,9 +280,12 @@
                         }
                         }
                 </script>
-  <footer>
-    <div class="copy">&copy; All Rights Reserved by Online Payments, 2020</div>
-</footer>
+   <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
+    <div class="container text-center">
+      <large>Copyright &copy; All Rights Reserved by Online Payments, 2020</large>
+    </div>
+    </footer>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
