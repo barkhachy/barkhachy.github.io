@@ -24,9 +24,9 @@ def handler(event , context):
                              "phone":data['phone'],    
                     }
     dateOfBirth =   {
-                        "day":date[2],
-                        "month":date[1],
-                        "year":date[0]
+                        "day":int(date[2]),
+                        "month":int(date[1]),
+                        "year":int(date[0])
     }
     billing_info = {
                             "nickName":data['f_name']+data['l_name'],
@@ -44,16 +44,16 @@ def handler(event , context):
                 "lastName":customer_info['lastName'],
                 "dateOfBirth":
                 {
-                    "year":1980,
-                    "month":10,
-                    "day":10
+                    "year":dateOfBirth['year'],
+                    "month":dateOfBirth['month'],
+                    "day":dateOfBirth['day']
                 },
                 "email":customer_info['email'],
                 "phone":customer_info['phone']
     }
     headers = {
                 "Content-Type":"application/json",
-                "Authorization" : "Basic cHJpdmF0ZS03NzUxOkItcWEyLTAtNWYwMzFjZGQtMC0zMDJkMDIxNDQ5NmJlODQ3MzJhMDFmNjkwMjY4ZDNiOGViNzJlNWI4Y2NmOTRlMjIwMjE1MDA4NTkxMzExN2YyZTFhODUzMTUwNWVlOGNjZmM4ZTk4ZGYzY2YxNzQ4",
+                "Authorization" : "Basic "+ os.getenv('private_base64'),
                 "Simulator" : "EXTERNAL",
                 "Access-Control-Allow-Origin":"*"
     }

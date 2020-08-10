@@ -27,7 +27,7 @@ def handler(event , context):
     }
     headers ={
                     "Content-Type":"application/json",
-                    "Authorization" : "Basic cHJpdmF0ZS03NzUxOkItcWEyLTAtNWYwMzFjZGQtMC0zMDJkMDIxNDQ5NmJlODQ3MzJhMDFmNjkwMjY4ZDNiOGViNzJlNWI4Y2NmOTRlMjIwMjE1MDA4NTkxMzExN2YyZTFhODUzMTUwNWVlOGNjZmM4ZTk4ZGYzY2YxNzQ4",
+                    "Authorization" : "Basic "+os.getenv('private_base64'),
                     "Simulator" : "EXTERNAL",
                     "Access-Control-Allow-Origin":"*"
             }
