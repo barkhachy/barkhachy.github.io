@@ -1,163 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <html>
-        <title>Cart</title>
-        <head>
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-            <style>
-                * {
-    box-sizing: border-box;
-    }
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     
-    *:focus {
-    outline: none;
-    }
-    body {
-    font-family: Arial;
-    background-color: #3498DB;
-    padding: 50px;
-    }
-    .login {
-    margin: 20px auto;
-    width: 300px;
-    }
-    .login-screen {
-    background-color: #FFF;
-    padding: 20px;
-    border-radius: 5px
-    }
     
-    .app-title {
-    text-align: center;
-    color: #777;
-    }
-    .login-form {
-    text-align: center;
-    }
-    .control-group {
-    margin-bottom: 10px;
-    }
-    .checkout{
-        margin: 20px auto;
-        width: 300px;
-    }
-    .checkout-screen {
-        background-color: #FFF;
-        padding: 20px;
-        border-radius: 5px
-    } 
-    .checkout-form {
-     text-align: center;
-    }
+    <title>Cart</title>
+    <header>
+      <nav class="navbar navbar-light bg-light"><a class="navbar-brand" href="#"><img class="d-inline-block panel-default" src="brand.jpg" width="80" height="80" alt="Payment"/>
+  Payment</a></nav>
+  </header>
+  </head>
+  <body>
+    <!--<div class="jumbotron"><img class="img-fluid" src="banner.jpg" width="1400" height="200" alt="Payment Banner" /></div> -->
+    <div class="container">
+      <div class="row">
+          <div class="col-5 offset-4">
+            <!--<div class="card"> 
+        <div class="card text-center" style="width: 18rem;"> -->
+            <div class="card border-success mb-4" style="max-width: 18rem;">
+                <div class="card-header">Personal Details</div>
+                <!--<div class="card-body text-success"> -->
+                <div class="card-body">
+                <!--<h5 class="card-title">Personal Details</h5>-->
+                <div class="panel-body">
+                        <form method="POST" name="loginForm" role="form">
+                          <fieldset>
+                              <!-- input(type="hidden" value= csrfToken readonly)-->
+                              <div class="form-group"><input class="form-control" placeholder="First Name" name="firstName" id ="f_name" type="text" required="required" /></div>
+                              <div class="form-group"><input class="form-control" placeholder="Last Name" name="lastName" id="l_name" type="text" required="required" /></div>
+                              <div class="form-group"><input class="form-control" placeholder="Email" name="email" type="email" id="mail" required="required" /></div>
+                              <div class="form-group"><input class="form-control" placeholder="Phone Number" name="phoneNo" id="phone" type="number" required="required" /></div>
+                              <div class="form-group"><input class="form-control" placeholder="Date" name="date" type="date" id ="dob" required="required" /></div>
+                            </fieldset>
 
-    input {
-    text-align: center;
-    background-color: #ECF0F1;
-    border: 2px solid transparent;
-    border-radius: 3px;
-    font-size: 16px;
-    font-weight: 200;
-    padding: 10px 0;
-    width: 250px;
-    transition: border .5s;
-    }
-    
-    input:focus {
-    border: 2px solid #3498DB;
-    box-shadow: none;
-    }
-    
-    .btn {
-    border: 2px solid transparent;
-    background: #3498DB;
-    color: #ffffff;
-    font-size: 16px;
-    line-height: 25px;
-    padding: 10px 0;
-    text-decoration: none;
-    text-shadow: none;
-    border-radius: 3px;
-    box-shadow: none;
-    transition: 0.25s;
-    display: block;
-    width: 250px;
-    margin: 0 auto;
-    }
-    
-    .btn:hover {
-    background-color: #2980B9;
-    }
-    
-    .login-link {
-    font-size: 12px;
-    color: #444;
-    display: block;
-    margin-top: 12px;
-    }
-            </style>
-           
-        </head>
-        <body>
-            <form name = "Checkout_form" method="POST">
-            <div class="checkout">
-            <div class="checkout-screen">
-            <div class="app-title">
-            <h1>Enter details</h1>
-            </div>
-            <div class="checkout-form">
-            <div class="control-group">
-                    <input type="text" class="checkout-field" value="" placeholder="First Name" name="f_name" id = "f_name" required>  
-                    <label class="login-field-icon fui-user" for="f_name"></label>
-            </div>
-            <div class="control-group">
-                    <input type="text" class="checkout-field" value="" placeholder="Last Name" name="l_name" id= "l_name" required>
-                    <label class="login-field-icon fui-user" for="l_name"></label>
-            </div>
-            <div class="control-group">
-                <input type="mail" class="checkout-field" value="" placeholder="Email" name="mail" id ="mail" required>  
-                <label class="login-field-icon fui-user" for="f_name"></label>
-            </div>
-            <div class="control-group">
-                <input type="number" class="checkout-field" value="" placeholder="Phone Number" name="phone" id = "phone" required>
-                <label class="login-field-icon fui-user" for="l_name"></label>
-            </div>
-            <div class="control-group">
-                <input type="date" class="checkout-field" value="" placeholder="" name="dob" id = "dob" required>
-                <label class="login-field-icon fui-lock" for="login-pass"></label>
-            </div>
-            <div class="app-title"><label>Address Details</label></div>
-            <div class="control-group">
-                <input type="text" class="checkout-field" value="" placeholder="Street" name="street_1" id = "street_1" required>  
-                <label class="login-field-icon fui-user" for="f_name"></label>
-            </div>
-            <div class="control-group">
-                <input type="text" class="checkout-field" value="" placeholder="Street 2" name="street_2" id = "street_2" required>
-                <label class="login-field-icon fui-user" for="l_name"></label>
-            </div>
-            <div class="control-group">
-                <input type="text" class="checkout-field" value="" placeholder="city" name="city" id = "city" required>  
-                <label class="login-field-icon fui-user" for="f_name"></label>
-            </div>
-            <div class="control-group">
-                <input type="number" class="checkout-field" value="" placeholder="Zip" name="zip" id = "zip" required>
-                <label class="login-field-icon fui-user" for="l_name"></label>
-            </div>
-            <div class="control-group">
-                <input type="text" class="checkout-field" value="" placeholder="State {For Maharashtra type MH}" name="state" id = "state" required>
-                <label class="login-field-icon fui-user" for="l_name"></label>
-            </div>
-            <div class="control-group">
-                <input type="text" class="checkout-field" value="" placeholder="Country {For India type IN}" name="country" id = "country" required>
-                <label class="login-field-icon fui-user" for="l_name"></label>
-            </div>
-            <input type="button" onclick="checkout()" value="Proceed" class="btn btn-primary btn-large btn-block"/>
-            </div>
-            </div>
-            </div>
-            </form>
-            <script src="https://hosted.paysafe.com/checkout/v2/paysafe.checkout.min.js"></script>
-            <script type="text/javascript" charset="utf-8">
-    
-            function checkout()
+                        </form>
+  
+                      </div>
+                  </div>
+              </div>
+              <div class="card border-success mb-4" style="max-width: 18rem;">
+                <div class="card-header">Address</div>
+                <!-- <div class="card-body text-success"> -->
+                <div class="card-body">
+                  <!--<h5 class="card-title">Personal Details</h5>-->
+                  <div class="panel-body">
+                              <div class="form-group"><input class="form-control" placeholder="Street" name="street" id="street_1" type="text" required="required" /></div>
+                              <div class="form-group"><input class="form-control" placeholder="Street 2" name="street2" id="street_2" type="text" required="" /></div>
+                              <div class="form-group"><input class="form-control" placeholder="City" name="city" id = "city" type="text" required="required" /></div>
+                              <div class="form-group"><input class="form-control" placeholder="Zip" name="zip" id= "zip" type="number" required="required" /></div>
+                              <div class="form-group"><input class="form-control" placeholder="State" name="state" id="state" type="text" required="required" /></div>
+                              <div class="form-group"><input class="form-control" placeholder="Country" name="country" id="country" type="text" required="required" /></div>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="card border-success mb-4" style="max-width: 18rem;">
+                            <div class="card-header">Proceed to Paysafe</div>
+                            <!-- <div class="card-body text-success"> -->
+                            <div class="card-body">
+                              <!--<h5 class="card-title">Personal Details</h5>-->
+                              <div class="panel-body">
+                                <div class="form-group"><input class="form-control" placeholder="Amount" name="amount" id="amount" type="number" required="required" /></div>
+                            </div><button class="btn btn-md btn-success btn-block" onclick="checkout()" type="button" name="proceed">Proceed</button>
+                        </div>
+                    </div>
+          </div>
+      </div>
+  </div>
+  <script src="https://hosted.paysafe.com/checkout/v2/paysafe.checkout.min.js"></script>
+  <script type="text/javascript" charset="utf-8"></script>
+  <script>
+    function checkout()
             {
                  
                 merchantRefNum = Math.random().toString(36).slice(5);
@@ -172,8 +90,11 @@
                 var city = document.getElementById('city').value;
                 var state = document.getElementById('state').value;
                 var country = document.getElementById('country').value;
+                var amount = document.getElementById('amount').value;
+                amount *= 100;
+
                 console.log(merchantRefNum)
-                console.log(mail)
+                console.log(dob+typeof(dob))
                 first_dict = 
                 {
                                     "f_name" : f_name,
@@ -211,7 +132,7 @@
                                                             //console.log(type(date))
                                                             dict ={
                                                             "currency": response['currency'],
-                                                            "amount": 5000,
+                                                            "amount": amount,
                                                             "locale": response['locale'],
                                                             "customer":
                                                             {
@@ -221,9 +142,9 @@
                                                                 "phone":phone,
                                                                 "dateOfBirth":
                                                                 {
-                                                                    "day": 10,
-                                                                    "month":10,////"{{dob['month']}}",
-                                                                    "year":1980//{{dob['year']}}"
+                                                                    "day":Number(dob.substring(8,10)),
+                                                                    "month":Number(dob.substring(5,7)),////"{{dob['month']}}",
+                                                                    "year":Number(dob.substring(0,4))//{{dob['year']}}"
                                                                 },
                                                             },
                                                             "billingAddress":{
@@ -340,7 +261,14 @@
                         }
                         }
                 </script>
-            
-          
-        </body>
-    </html>
+  <footer>
+    <div class="copy">&copy; All Rights Reserved by Online Payments, 2020</div>
+</footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </body>
+</html>
